@@ -1,0 +1,26 @@
+{
+  "name": "personal-portfolio-fullstack",
+  "version": "1.0.0",
+  "description": "A full-stack personal portfolio with an Express API, SQLite database, and responsive frontend.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "express",
+    "sqlite",
+    "full-stack"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemailer": "^8.0.11"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}

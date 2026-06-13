@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/card-nav.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">PD</a>
+      <div id="card-nav-root"></div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Full-stack portfolio</p>
+          <h1 id="profile-name">P DINESH</h1>
+          <p id="profile-summary" class="hero-summary">Loading profile...</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">View projects</a>
+            <a class="button secondary" href="#contact">Start a conversation</a>
+          </div>
+        </div>
+        <img src="/assets/profile.png" alt="Developer working on a laptop at a desk" />
+      </section>
+
+      <section class="stats" aria-label="Portfolio highlights">
+        <div>
+          <strong>3+</strong>
+          <span>Featured builds</span>
+        </div>
+        <div>
+          <strong>9</strong>
+          <span>Core skills</span>
+        </div>
+        <div>
+          <strong>Full-stack</strong>
+          <span>Frontend, API, database</span>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2>Professional Journey & Background</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-bio">
+            <p id="about-text" class="about-description">Loading biography...</p>
+            <div id="about-stats" class="about-stats-container" aria-live="polite"></div>
+            
+            <div class="about-extra-grid">
+              <div class="about-goal-container">
+                <h3>My Goal</h3>
+                <blockquote id="about-goal" class="goal-text">Loading goal...</blockquote>
+              </div>
+              <div class="about-do-container">
+                <h3>What I Do</h3>
+                <ul id="about-do" class="do-list"></ul>
+              </div>
+            </div>
+
+            <div class="about-certifications-container">
+              <h3>Certifications</h3>
+              <div id="about-certifications" class="certifications-grid"></div>
+            </div>
+          </div>
+        </div>
+        <div class="about-timeline-section">
+          <div class="timeline-column">
+            <h3>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="timeline-icon" style="color: var(--teal-dark);"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              Experience
+            </h3>
+            <div id="experience-timeline" class="timeline" aria-live="polite"></div>
+          </div>
+          <div class="timeline-column">
+            <h3>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="timeline-icon" style="color: var(--teal-dark);"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2.5 3 6 3s6-1 6-3v-5"></path></svg>
+              Education
+            </h3>
+            <div id="education-timeline" class="timeline" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Selected work</p>
+          <h2>Projects backed by real data</h2>
+        </div>
+        <div id="project-grid" class="project-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="skills" class="section split-section">
+        <div class="section-heading">
+          <p class="eyebrow">Capabilities</p>
+          <h2>Skills organized by stack</h2>
+        </div>
+        <div id="skills-list" class="skills-list" aria-live="polite"></div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2>Save messages through the backend</h2>
+          <div class="contact-direct">
+            <p>Or reach out directly via email:</p>
+            <a id="contact-email" href="" class="contact-email-link"></a>
+          </div>
+        </div>
+        <form id="contact-form" class="contact-form">
+          <label>
+            Name
+            <input name="name" type="text" autocomplete="name" required />
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button class="button primary" type="submit">Send message</button>
+          <p id="form-status" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <span id="footer-name">P DINESH</span>
+      <span>Built with HTML, CSS, JavaScript, Express, and SQLite.</span>
+    </footer>
+
+    <script src="/app.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="/card-nav.js"></script>
+  </body>
+</html>

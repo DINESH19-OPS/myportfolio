@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Review Hub logo</title>
+  <desc id="desc">White Review Hub wordmark on a black background.</desc>
+  <rect width="1200" height="720" fill="#030303" />
+  <g transform="translate(160 276)">
+    <text
+      x="0"
+      y="116"
+      fill="#f8f8f8"
+      font-family="Inter, Arial, sans-serif"
+      font-size="132"
+      font-weight="900"
+      letter-spacing="-2"
+    >REVIEW</text>
+    <text
+      x="600"
+      y="116"
+      fill="#f8f8f8"
+      font-family="'Segoe Script', 'Brush Script MT', cursive"
+      font-size="118"
+      font-weight="400"
+      font-style="italic"
+    >hub</text>
+  </g>
+</svg>

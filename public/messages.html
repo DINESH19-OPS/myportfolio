@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messages - Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .messages-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        min-height: calc(100vh - 100px);
+      }
+      .message-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 24px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .message-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 12px;
+      }
+      .message-sender {
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: var(--teal-dark);
+      }
+      .message-email {
+        color: var(--muted);
+        font-size: 0.9em;
+        margin-top: 4px;
+      }
+      .message-email a {
+        text-decoration: underline;
+      }
+      .message-date {
+        color: var(--muted);
+        font-size: 0.85em;
+        text-align: right;
+      }
+      .message-body {
+        line-height: 1.6;
+        white-space: pre-wrap;
+        color: var(--ink);
+      }
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 30px;
+        color: var(--teal-dark);
+        font-weight: 800;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .back-link:hover {
+        color: var(--coral);
+      }
+      .messages-title {
+        margin-top: 0;
+        margin-bottom: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">PD</a>
+      <div style="font-weight: 600; color: var(--muted);">Admin Panel</div>
+    </header>
+    <main class="messages-container">
+      <a href="/" class="back-link">&larr; Back to Portfolio</a>
+      <h1 class="messages-title">Received Messages</h1>
+      <div id="messages-list" aria-live="polite">
+        <p>Loading messages...</p>
+      </div>
+    </main>
+    <footer>
+      <span>P DINESH</span>
+      <span>Messages Dashboard</span>
+    </footer>
+    <script src="/messages.js"></script>
+  </body>
+</html>
