@@ -1,0 +1,30 @@
+[
+  {
+    "id": "b2661589-a0e7-42bf-8378-4bb5c4b34b08",
+    "name": "dinesh",
+    "email": "dinesh126ab@gmail.com",
+    "password": "$2a$10$LwC5Y/F4I6gWZNAdIbMFpecGtAMIpPpQ4SwjXBdiQAtC9KG6bWRHO",
+    "createdAt": "2026-06-13T08:31:34.619Z"
+  },
+  {
+    "id": "076a85d8-2c57-46c6-bb2e-c227a260159c",
+    "name": "apple12",
+    "email": "reddymala60@gmail.com",
+    "password": "$2a$10$xhz8jsedlnJhfX7bCaR3jOpnfj22NPgArv4FRod32z/Tqdq38As46",
+    "createdAt": "2026-06-13T15:40:05.259Z"
+  },
+  {
+    "id": "a84418c8-0bc7-4694-9059-5c65f1b49878",
+    "name": "Reviewer",
+    "email": "reviewer@example.com",
+    "password": "$2a$10$r4Lr5vL/hC3LH9HtXbXZfu.aNqMq75WbyHyk/38bIv0EJlljlqaVS",
+    "createdAt": "2026-06-14T13:10:48.506Z"
+  },
+  {
+    "id": "bbab1c55-b9ab-4948-9b38-66d91c1be2d0",
+    "name": "Test User",
+    "email": "testuser@example.com",
+    "password": "$2a$10$7c4QiU4dRXE8GO25GxyHI.MZSk89ypN/dYBtZHCmcC8hZlxHr4nqC",
+    "createdAt": "2026-06-14T13:13:30.178Z"
+  }
+]

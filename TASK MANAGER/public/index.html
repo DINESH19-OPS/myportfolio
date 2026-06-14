@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow — Sign In</title>
+  <meta name="description" content="Sign in to TaskFlow to manage your tasks efficiently with real-time updates and team collaboration." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✅</text></svg>" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/auth.css" />
+</head>
+<body>
+  <!-- Strands WebGL animated background -->
+  <canvas id="strands-canvas" aria-hidden="true"></canvas>
+
+  <div class="auth-page">
+    <!-- Ambient glow effects -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Centered form panel -->
+    <div class="auth-form-panel">
+      <div class="auth-form-container">
+        <!-- Logo centered at top - Floating -->
+        <div class="auth-branding-header">
+          <h1 class="auth-logo-text">TaskFlow</h1>
+          <p class="auth-tagline">Organize. Collaborate. Execute.</p>
+        </div>
+
+        <!-- Modern tab switcher -->
+        <div class="auth-tab-switcher">
+          <button type="button" class="auth-tab-btn active" id="tab-login" onclick="switchTab('login')">
+            <span class="tab-label">Sign In</span>
+            <span class="tab-indicator"></span>
+          </button>
+          <button type="button" class="auth-tab-btn" id="tab-register" onclick="switchTab('register')">
+            <span class="tab-label">Create Account</span>
+            <span class="tab-indicator"></span>
+          </button>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <div id="login-form-section" class="auth-form-section active">
+          <form id="login-form" class="auth-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="login-email">Email Address</label>
+              <div class="input-wrapper">
+                <span class="input-icon">✉️</span>
+                <input type="email" id="login-email" class="form-input" placeholder="you@example.com" autocomplete="email" required />
+              </div>
+              <span class="form-error" id="login-email-err"></span>
+            </div>
+
+            <div class="form-group">
+              <div class="label-row">
+                <label class="form-label" for="login-password">Password</label>
+                <a href="#" class="forgot-link" onclick="switchTab('forgot'); return false;">Forgot?</a>
+              </div>
+              <div class="input-wrapper">
+                <span class="input-icon">🔑</span>
+                <input type="password" id="login-password" class="form-input" placeholder="••••••••" autocomplete="current-password" required />
+                <button type="button" class="toggle-password" onclick="togglePassword('login-password', this)">👁️</button>
+              </div>
+              <span class="form-error" id="login-password-err"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary auth-submit-btn" id="login-btn">
+              <span id="login-btn-text">Sign In</span>
+            </button>
+
+            <div id="login-error" class="form-error" style="text-align:center;"></div>
+          </form>
+
+          <div class="auth-divider">
+            <span>Don't have an account?</span>
+          </div>
+
+          <button type="button" class="btn-text-link" onclick="switchTab('register'); return false;">Create one for free →</button>
+        </div>
+
+        <!-- FORGOT PASSWORD FORM -->
+        <div id="forgot-form-section" class="auth-form-section">
+          <form id="forgot-form" class="auth-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="forgot-email">Email Address</label>
+              <div class="input-wrapper">
+                <span class="input-icon">✉️</span>
+                <input type="email" id="forgot-email" class="form-input" placeholder="you@example.com" autocomplete="email" required />
+              </div>
+              <span class="form-error" id="forgot-email-err"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary auth-submit-btn" id="forgot-btn">
+              <span id="forgot-btn-text">Send OTP</span>
+            </button>
+
+            <div id="forgot-error" class="form-error" style="text-align:center;"></div>
+          </form>
+
+          <div class="auth-divider">
+            <span></span>
+          </div>
+
+          <button type="button" class="btn-text-link" onclick="switchTab('login'); return false;">← Back to Sign In</button>
+        </div>
+
+        <!-- VERIFY OTP FORM -->
+        <div id="otp-form-section" class="auth-form-section">
+          <form id="otp-form" class="auth-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="otp-code">One-Time Password</label>
+              <div class="input-wrapper">
+                <span class="input-icon">🛡️</span>
+                <input type="text" id="otp-code" class="form-input" placeholder="000000" maxlength="6" autocomplete="one-time-code" required />
+              </div>
+              <span class="form-error" id="otp-code-err"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary auth-submit-btn" id="otp-btn">
+              <span id="otp-btn-text">Verify & Log In</span>
+            </button>
+
+            <div id="otp-error" class="form-error" style="text-align:center;"></div>
+          </form>
+
+          <div class="auth-divider">
+            <span></span>
+          </div>
+
+          <button type="button" class="btn-text-link" onclick="switchTab('forgot'); return false;">← Resend Code</button>
+        </div>
+
+        <!-- REGISTER FORM -->
+        <div id="register-form-section" class="auth-form-section">
+          <form id="register-form" class="auth-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="reg-name">Full Name</label>
+              <div class="input-wrapper">
+                <span class="input-icon">👤</span>
+                <input type="text" id="reg-name" class="form-input" placeholder="John Doe" autocomplete="name" required />
+              </div>
+              <span class="form-error" id="reg-name-err"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-email">Email Address</label>
+              <div class="input-wrapper">
+                <span class="input-icon">✉️</span>
+                <input type="email" id="reg-email" class="form-input" placeholder="you@example.com" autocomplete="email" required />
+              </div>
+              <span class="form-error" id="reg-email-err"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-password">Password</label>
+              <div class="input-wrapper">
+                <span class="input-icon">🔑</span>
+                <input type="password" id="reg-password" class="form-input" placeholder="••••••••" autocomplete="new-password" required />
+                <button type="button" class="toggle-password" onclick="togglePassword('reg-password', this)">👁️</button>
+              </div>
+              <span class="form-error" id="reg-password-err"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-confirm">Confirm Password</label>
+              <div class="input-wrapper">
+                <span class="input-icon">🔑</span>
+                <input type="password" id="reg-confirm" class="form-input" placeholder="••••••••" autocomplete="new-password" required />
+              </div>
+              <span class="form-error" id="reg-confirm-err"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary auth-submit-btn" id="register-btn">
+              <span id="register-btn-text">Create Account</span>
+            </button>
+
+            <div id="register-error" class="form-error" style="text-align:center;"></div>
+          </form>
+
+          <div class="auth-divider">
+            <span>Already a member?</span>
+          </div>
+
+          <button type="button" class="btn-text-link" onclick="switchTab('login'); return false;">Sign in instead →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+  <script src="/js/strands.js?v=3"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>
